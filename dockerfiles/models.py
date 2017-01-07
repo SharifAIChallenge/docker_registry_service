@@ -9,3 +9,11 @@ class DockerFile(models.Model):
 
     def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
         super().save(force_insert, force_update, using, update_fields)
+        subprocess.call(['scripts/build.sh', self.repository, self.file.path])
+
+
+
+
+
+
+
